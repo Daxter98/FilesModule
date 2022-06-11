@@ -34,8 +34,10 @@
             // 
             // TxtBoxFilePath
             // 
+            this.TxtBoxFilePath.Enabled = false;
             this.TxtBoxFilePath.Location = new System.Drawing.Point(12, 40);
             this.TxtBoxFilePath.Name = "TxtBoxFilePath";
+            this.TxtBoxFilePath.ReadOnly = true;
             this.TxtBoxFilePath.Size = new System.Drawing.Size(275, 23);
             this.TxtBoxFilePath.TabIndex = 0;
             // 
