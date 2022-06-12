@@ -14,9 +14,14 @@ namespace FilesModule
 
         public string TxtFilePath { get => TxtBoxFilePath.Text; set => TxtBoxFilePath.Text = value; }
 
-        private void BtnCargar_Click(object sender, EventArgs e)
+        private void BtnSelect_Click(object sender, EventArgs e)
         {
             _presenter.BrowseFiles();
+        }
+
+        private void BtnCargar_Click(object sender, EventArgs e)
+        {
+            _presenter.SaveFile();
         }
     }
 }
