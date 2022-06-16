@@ -31,7 +31,7 @@ namespace FilesModule.Presenter
                 return;
             }
 
-            filesView.TxtFilePath = filesView.TxtFilePath.Trim();
+            filesView.TxtFilePath = filesView.TxtFilePath.Trim(); // Test Functionaltity of this line
 
             // using === with()
             using(Stream stream = File.OpenRead(filesView.TxtFilePath))

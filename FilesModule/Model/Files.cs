@@ -12,7 +12,7 @@ namespace FilesModule.Model
         }
 
 
-        public static Boolean InsertFile(SqlConnection cn, byte[] data, string ext)
+        public static bool InsertFile(SqlConnection cn, byte[] data, string ext)
         {
             string query = "INSERT INTO Archivo(data, extension) VALUES(@data, @extn)";
             SqlCommand cmd = new(query, cn);
@@ -23,7 +23,6 @@ namespace FilesModule.Model
             try
             {
                 cn.Open();
-
                 return cmd.ExecuteNonQuery() > 0;
             }
             catch(SqlException ex)
