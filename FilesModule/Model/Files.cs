@@ -4,7 +4,7 @@ namespace FilesModule.Model
 {
     internal class Files
     {
-        private static readonly string CONNSTR = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=DBTest;Integrated Security=True";
+        private static readonly string CONNSTR = "Data Source=52.165.164.221;Initial Catalog=CIDEIN;Persist Security Info=True;User ID=dba_emadrigals;Password=Daxter0626@16";
 
         public static SqlConnection GetConnection()
         {
@@ -12,13 +12,13 @@ namespace FilesModule.Model
         }
 
 
-        public static bool InsertFile(SqlConnection cn, byte[] data, string ext)
+        public static bool InsertFile(SqlConnection cn, byte[] data, string nombre)
         {
-            string query = "INSERT INTO Archivo(data, extension) VALUES(@data, @extn)";
+            string query = "INSERT INTO Archivo(nombre, data) VALUES(@nombre, @data)";
             SqlCommand cmd = new(query, cn);
 
             cmd.Parameters.Add("@data", System.Data.SqlDbType.VarBinary).Value = data;
-            cmd.Parameters.Add("@extn", System.Data.SqlDbType.VarChar).Value = ext;
+            cmd.Parameters.Add("@nombre", System.Data.SqlDbType.VarChar).Value = nombre;
 
             try
             {

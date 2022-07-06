@@ -41,11 +41,11 @@ namespace FilesModule.Presenter
                 // Read Into the Buffer
                 stream.Read(buffer, 0, buffer.Length);
 
-                string extension = new FileInfo(filesView.TxtFilePath).Extension;
+                string nombre = new FileInfo(filesView.TxtFilePath).Name;
 
                 if (connection is not null)
                 {
-                    var success = Files.InsertFile(connection, buffer, extension);
+                    var success = Files.InsertFile(connection, buffer, nombre);
 
                     if (success)
                     {
